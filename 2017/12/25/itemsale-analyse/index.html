@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="YOFEE" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        门店商品销售占比预测分析｜undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite.com/2017/12/25/itemsale-analyse/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    YOFEE
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="http://stockjobs.cn/yofeetian.github.io/blog-bg-black-run.jpg">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('http://stockjobs.cn/yofeetian.github.io/blog-bg-black-run.jpg')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>门店商品销售占比预测分析</h1>
+                    
+                    <span class="meta">
+                         作者 YOFEE TIAN
+                        <span>
+                          日期 2017-12-25
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            门店商品销售占比预测分析
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h1 id="门店商品销售占比预测分析"><a href="#门店商品销售占比预测分析" class="headerlink" title="门店商品销售占比预测分析"></a>门店商品销售占比预测分析</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<pre><code>将门店按特定时间段，商品促销类型，部类等多个维度进行划分，计算每个时间周期内的门店总销售额与各商品销量的比例关系，从而试图找出门店每卖多少金额会带来此商品多少销量的规律。
+</code></pre></blockquote>
+<h2 id="1-基础数据准备"><a href="#1-基础数据准备" class="headerlink" title="1. 基础数据准备"></a>1. 基础数据准备</h2><pre><code>此分析所用到的所有基础数据均取自于最近一年的华北区域所有门店的POS小票数据
+依据与业务商定的异常数据清洗规则进行统一清洗
+将小票数据按天进行汇总求和
+上架未销售的商品添加当天0销售的记录
+</code></pre><h2 id="2-时间段分区"><a href="#2-时间段分区" class="headerlink" title="2.时间段分区"></a>2.时间段分区</h2><p>总体上将一整年数据按以下维度进行切分：</p>
+<pre><code>基于日期的切分：月度，工作日,周末,节假日
+基于日期店品的切分：正常品，促销品
+</code></pre><h2 id="3-各分区的权重计算及数据统计"><a href="#3-各分区的权重计算及数据统计" class="headerlink" title="3.各分区的权重计算及数据统计"></a>3.各分区的权重计算及数据统计</h2><blockquote>
+<p>此步骤的逻辑均会对各类型时间维度分别计算与正常时段的权重，转换成正常销售后再做统一处理</p>
+</blockquote>
+<h3 id="3-1-计算各种特殊时期到正常时期的转化权重"><a href="#3-1-计算各种特殊时期到正常时期的转化权重" class="headerlink" title="3.1 计算各种特殊时期到正常时期的转化权重"></a>3.1 计算各种特殊时期到正常时期的转化权重</h3><p>特殊日期到正常日期的销量转化权重（EMC粒度）</p>
+<p>$$<br>Q’ = \frac{1}{n}\sum_{i=1}^{n}Q_i \tag{1}<br>$$</p>
+<pre><code>Qi表示商品i的特定时期内的平均销量
+n代表此EMC下的商品数量
+Q&apos;表示此EMC下所有商品在特定时期内的平均销量
+分别从「周末，非周末，节假日，非节假日，促销，正常」维度进行统计
+</code></pre><p>$$<br>\omega_e = \frac{Q’_w}{Q’_n}  \tag{2}<br>$$</p>
+<pre><code>其中Q_w表示周末日均销量/节假日日均销量/促销品日均销量
+Q_n表示非周末日均销量/非节假日日均销量/正常品日均销量
+ω_e表示各EMC的特殊时期与正常时期的权重关系
+</code></pre><p>得到类似以下的结果：</p>
+<table>
+<thead>
+<tr>
+<th>EMC</th>
+<th>月份</th>
+<th>周末</th>
+<th>促销</th>
+<th>节假日</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0001</td>
+<td>1</td>
+<td>1.4</td>
+<td>1.8</td>
+<td>2.1</td>
+</tr>
+<tr>
+<td>0002</td>
+<td>3</td>
+<td>1.2</td>
+<td>1.3</td>
+<td>1.3</td>
+</tr>
+<tr>
+<td>0003</td>
+<td>2</td>
+<td>1.1</td>
+<td>1.5</td>
+<td>1.7</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-2-计算店品的日均销量并转化为正常时期的日均销售量"><a href="#3-2-计算店品的日均销量并转化为正常时期的日均销售量" class="headerlink" title="3.2 计算店品的日均销量并转化为正常时期的日均销售量"></a>3.2 计算店品的日均销量并转化为正常时期的日均销售量</h3><p>$$<br>Q<em>{avg} = \frac{\frac{1}{d}\sum</em>{i=1}^{d}Q<em>d}{\omega</em>{e1} * \omega_{e2}…}  \tag{3}<br>$$</p>
+<pre><code>其中d表示时间周期的天数，Q表示此商品的销量
+商品按正常和促销分别计算各自的平均销量
+</code></pre><h3 id="3-3-计算门店的日均销售额"><a href="#3-3-计算门店的日均销售额" class="headerlink" title="3.3 计算门店的日均销售额"></a>3.3 计算门店的日均销售额</h3><p>$$<br>S<em>{avg} = \frac{1}{d}\sum</em>{i=1}^{d}S_d  \tag{4}<br>$$</p>
+<pre><code>其中S代表门店当日总销售额，d为时间周期的天数
+</code></pre><h3 id="3-4-计算此店品与门店总销售额的转化权重"><a href="#3-4-计算此店品与门店总销售额的转化权重" class="headerlink" title="3.4 计算此店品与门店总销售额的转化权重"></a>3.4 计算此店品与门店总销售额的转化权重</h3><p>$$<br>\omega = \frac{Q<em>{avg}}{S</em>{avg}} \tag{5}<br>$$</p>
+<pre><code>ω 表示门店总销售额与此商品销量的转化权重
+</code></pre><h2 id="4-店品的销售量预测"><a href="#4-店品的销售量预测" class="headerlink" title="4.店品的销售量预测"></a>4.店品的销售量预测</h2><blockquote>
+<p>近期与可比日的门店总销售额的平均值乘以上一步的商品销量转化权重，再将此正常时期销量转化为当天真实情况的销量预期值。</p>
+</blockquote>
+<p>$$<br>Q<em>p = \frac{(S</em>{yesterday} + S_{compare})}{2<em>\omega </em> \omega_e}  \tag{6}<br>$$</p>
+<pre><code>其中S_yesterday代表昨日此门店的总销售额
+S_compare代表此门店可比日总销售额
+Q_p代表预测日此店品的销量预估
+</code></pre><h2 id="5-预测数据的准确度验证"><a href="#5-预测数据的准确度验证" class="headerlink" title="5.预测数据的准确度验证"></a>5.预测数据的准确度验证</h2><blockquote>
+<p>基于此规则计算出来的预估销量值和现有DMS值分别与真实值作比较，取相减后绝对值小的为准确，然后每个部类做对比验证，结果展示如下所示：</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>部类</th>
+<th>在售店品数</th>
+<th>DMS准确数</th>
+<th>此规则准确值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017-12-01</td>
+<td>硬百</td>
+<td>1000</td>
+<td>400</td>
+<td>600</td>
+<td></td>
+</tr>
+<tr>
+<td>2017-12-01</td>
+<td>休食</td>
+<td>2000</td>
+<td>1050</td>
+<td>950</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/12/05/hello-world/" data-toggle="tooltip" data-placement="top"
+                           title="HELLO WORLD">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#门店商品销售占比预测分析"><span class="toc-text">门店商品销售占比预测分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-基础数据准备"><span class="toc-text">1. 基础数据准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-时间段分区"><span class="toc-text">2.时间段分区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-各分区的权重计算及数据统计"><span class="toc-text">3.各分区的权重计算及数据统计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-计算各种特殊时期到正常时期的转化权重"><span class="toc-text">3.1 计算各种特殊时期到正常时期的转化权重</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-计算店品的日均销量并转化为正常时期的日均销售量"><span class="toc-text">3.2 计算店品的日均销量并转化为正常时期的日均销售量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-计算门店的日均销售额"><span class="toc-text">3.3 计算门店的日均销售额</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-计算此店品与门店总销售额的转化权重"><span class="toc-text">3.4 计算此店品与门店总销售额的转化权重</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-店品的销售量预测"><span class="toc-text">4.店品的销售量预测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-预测数据的准确度验证"><span class="toc-text">5.预测数据的准确度验证</span></a></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/Mr_Yofee">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/yofeetian">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; YOFEE 2017
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="http://stockjobs.cn/yofeetian.github.io/IMG_1184.jpg">
+</body>
+
+</html>
